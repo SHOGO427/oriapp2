@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+  <title>reSAKE</title>
+  <link rel="stylesheet"  href="./style.css">
+  <link rel="stylesheet" href="./setting.css">
+  <link rel="apple-touch-icon" href="image/icon.jpeg">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="top-head">
+    <div class="content">
+      <h1>reSAKE</h1>
+    </div>
+  </div>
+
+      <ul class="dropdown">
+        <li>
+        <a href="#">メニュー</a>
+          <ul class="nest">
+            <li>
+              <a href="file:///Users/SHOGO/Desktop/Original%20Service/mypage.html">マイページ</a>
+            </li>
+            <li>
+              <a href="file:///Users/SHOGO/Desktop/Original%20Service/tweet.html">投稿</a>
+            </li>
+            <li>
+              <a href="file:///Users/SHOGO/Desktop/Original%20Service/search.html">検索</a>
+            </li>
+            <li>
+              <a href="">タイムライン</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+         <a href="file:///Users/SHOGO/Desktop/Original%20Service/new.html">新規登録</a>
+        </li>
+
+        <li>
+         <a href="file:///Users/SHOGO/Desktop/Original%20Service/login.html">ログアウト</a>
+        </li>
+
+
+<%= yield %>
+
+
+  <div class="footer">
+    <div class="content">
+      <h1>Copyright reSAKE 2016.</h1>
+    </div>
+  </div>
+
+</body>
+</html>
