@@ -173,3 +173,77 @@ ul {
 .content {
   text-align: center;
 }
+
+.lowcontent {
+    text-align: center;
+}
+
+.signup {
+    text-align: center;
+}
+
+.login {
+    text-align: center;
+}
+
+.wrapper {
+  margin: 80px auto auto;
+  width: auto;
+  background-color: #73BF67;
+  border-radius: 5px 5px 0 0;
+}
+
+.vcard {
+  padding: 24px 36px;
+  text-align: center;
+
+}
+.vcard img {
+  width:200px;
+  border-radius:100px;
+}
+.name {
+  font-weight: bold;
+}
+.id {
+  font-size: 90%;
+}
+
+
+
+.proftweet ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.proftweet ul li {
+  display: flex;
+  margin-top: 2px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 8px;
+  background-color: white;
+}
+
+.proftweet-img {
+  text-align: center;
+}
+.proftweet-img img {
+  width: 70px;
+}
+
+.proftweet-body {
+  flex: 4;
+}
+.proftweet-name {
+  font-weight: bold;
+  display: inline-block;
+}
+.proftweet-id {
+  font-size: 80%;
+  display: inline-block;
+}
+.proftweet-text {
+  font-size: 80%;
+}

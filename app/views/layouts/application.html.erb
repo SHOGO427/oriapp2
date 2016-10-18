@@ -20,31 +20,69 @@
 
       <ul class="dropdown">
         <li>
+
+        <% if user_signed_in? %>
+
         <a href="#">メニュー</a>
           <ul class="nest">
             <li>
-              <a href="file:///Users/SHOGO/Desktop/Original%20Service/mypage.html">マイページ</a>
+                <ul class="user__info">
+                  <li>
+                    <a href="/users/<%= current_user.id %>">マイページ</a>
+                  </li>
+                </ul>
             </li>
             <li>
-              <a href="file:///Users/SHOGO/Desktop/Original%20Service/tweet.html">投稿</a>
+              <a href="/tweets/new">投稿</a>
             </li>
             <li>
               <a href="file:///Users/SHOGO/Desktop/Original%20Service/search.html">検索</a>
             </li>
+          </ul>
+
+        <li>
+         <a href="/timeline">タイムライン</a>
+        </li>
+
+        <li>
+         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        </li>
+
+        <li>
+         <a href="/tweets">戻る</a>
+        </li>
+
+        <% else %>
+
+        <a href="#">メニュー</a>
+          <ul class="nest">
             <li>
-              <a href="">タイムライン</a>
+              <a href="/tweets/new">マイページ</a>
+            </li>
+            <li>
+              <a href="/tweets/new">投稿</a>
+            </li>
+            <li>
+              <a href="/tweets/new">検索</a>
+            </li>
+            <li>
+              <a href="/tweets/new">タイムライン</a>
             </li>
           </ul>
+
+        <li>
+         <a href="/users/sign_up">新規登録</a>
         </li>
 
         <li>
-         <a href="file:///Users/SHOGO/Desktop/Original%20Service/new.html">新規登録</a>
+         <%= link_to "ログイン", new_user_session_path, class: 'post' %>
         </li>
 
         <li>
-         <a href="file:///Users/SHOGO/Desktop/Original%20Service/login.html">ログアウト</a>
+         <a href="/tweets">戻る</a>
         </li>
-
+      <% end %>
+      </li>
 
 <%= yield %>
 

@@ -54,3 +54,5 @@ group :production, :staging do
 end
 
 gem 'devise'
+gem 'kaminari'
+gem 'paperclip'
