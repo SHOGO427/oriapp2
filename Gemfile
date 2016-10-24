@@ -60,3 +60,7 @@ gem 'rakuten_web_service'
 gem 'carrierwave'
 gem 'rmagick', require: 'RMagick'
 gem 'simple_form'
+
+group :production, :staging do
+  gem 'rails_12factor'
+end
