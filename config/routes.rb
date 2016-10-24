@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root  'tweets#index'
   # devise_for :users
@@ -12,5 +13,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   get '/timeline' => 'tweets#timeline'
+  get 'rakuten_search' => 'rakuten#search'
 
 end

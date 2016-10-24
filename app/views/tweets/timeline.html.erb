@@ -1,9 +1,21 @@
   <div class="rowcontent" >
     <% @tweets.each do |tweet| %>
       <div class="content_post" style="background-image: url(<%= tweet.image %>);">
+
+       <% if user_signed_in? && current_user.id == tweet.user_id %>
+       <div class="more">
+            <li>
+              <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
+            </li>
+       </div>
+       <% end %>
         <%= simple_format(tweet.text) %>
-        <span class="name"><%= tweet.name %></span>
+        <span class="name">
+          <a href="">
+            <%= tweet.user.name %>
+          </a>
+        </span>
       </div>
     <% end %>
-  
+
 </div>

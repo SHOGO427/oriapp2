@@ -14,7 +14,7 @@ class TweetsController < ApplicationController
     end
 
     def create
-      Tweet.create(tweet_params)
+      Tweet.create(image: tweet_params[:image], place: tweet_params[:place], text: tweet_params[:text], user_id: current_user.id)
       redirect_to action: 'index', flash: {success: 'Yes!! Success'}
     end
 
@@ -24,6 +24,25 @@ class TweetsController < ApplicationController
 
     def timeline
       @tweets = Tweet.order("created_at DESC")
+    end
+
+    def destroy
+      tweet = Tweet.find(params[:id])
+      if tweet.user_id == current_user.id
+        tweet.destroy
+      redirect_to action: :index
+      end
+    end
+
+    def search_rakuten_api(keyword)
+      items = RakutenWebService::Ichiba::Item.search(keyword: keyword)
+      images_arr = []
+      items.each do |item|
+
+      puts item['itemName']
+      puts item['itemPrice']
+      puts item['itemUrl']
+      end
     end
 
     private

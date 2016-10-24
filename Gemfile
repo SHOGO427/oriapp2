@@ -56,3 +56,7 @@ end
 gem 'devise'
 gem 'kaminari'
 gem 'paperclip'
+gem 'rakuten_web_service'
+gem 'carrierwave'
+gem 'rmagick', require: 'RMagick'
+gem 'simple_form'
