@@ -16,6 +16,7 @@ h1, h2, h3, h4, h5, h6{
     background-size: cover;
   }
 
+
 .content{
      width: 0 auto;
      margin: 0 auto;
@@ -253,5 +254,9 @@ ul {
 }
 
 .result {
+    text-align: center;
+}
+
+.content_post {
     text-align: center;
 }

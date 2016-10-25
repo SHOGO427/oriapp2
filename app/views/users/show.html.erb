@@ -1,7 +1,7 @@
 
 <div class="wrapper">
   <div class="vcard">
-    <img src="image/icon.jpeg">
+    <div class="user_image"><%= image_tag  current_user.avatar %></div>
     <div class="name"><li>名前:</li><%= @user.name %></div>
     <div class="nickname"><li>ニックネーム:</li><%= @user.nickname %></div>
     <div class="sake"><li>好きな日本酒:</li><%= @user.sake %></div>

@@ -1,13 +1,14 @@
-<div class="content">
-  <%= form_for('/tweets', method: :post) do %>
-    <h3>記録する</h3>
+  <div class="content">
+    <%= form_tag("/tweets/#{@tweet.id}", method: :patch ) do %>
+      <h3>
+        編集する
+      </h3>
     <h5>写真を記録する</h5>
     <input placeholder="写真を載せる" type="file" name="image" id="upload_form"><br>
-
     <h5>場所を選択する</h5>
     <input placeholder="お店を記録する" type="text" name="place"><br>
     <textarea cols="30" name="text" placeholder="日本酒の感想を投稿しよう" rows="10"></textarea><br>
     <input type="submit" value="SENT">
-  <% end %>
-</div>
 
+    <% end %>
+  </div>

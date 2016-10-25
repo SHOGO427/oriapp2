@@ -34,6 +34,18 @@ class TweetsController < ApplicationController
       end
     end
 
+    def edit
+      @tweet = Tweet.find(params[:id])
+    end
+
+    def update
+      tweet = Tweet.find(params[:id])
+      if tweet.user_id == current_user.id
+        tweet.update(tweet_params)
+      redirect_to action: :index
+      end
+    end
+
     def search_rakuten_api(keyword)
       items = RakutenWebService::Ichiba::Item.search(keyword: keyword)
       images_arr = []
