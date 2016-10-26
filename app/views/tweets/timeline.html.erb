@@ -1,6 +1,6 @@
   <div class="rowcontent" >
     <% @tweets.each do |tweet| %>
-      <div class="content_post" style="background-image: url(<%= tweet.image %>);">
+      <div class="content_post" >
         <span class="name">
           <a href="">
             <%= tweet.user.name %>
@@ -17,7 +17,7 @@
        </div>
        <% end %>
         <%= simple_format(tweet.text) %>
-        <%= simple_format(tweet.image) %>
+        <%= image_tag(tweet.image) %>
       </div>
     <% end %>
   </div>

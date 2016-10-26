@@ -11,6 +11,14 @@
 
   <div class="index-head">
     <div class="content">
-      <h1>あの時の日本酒を忘れないために</h1>
+      <h1>My Sake History</h1>
     </div>
+  </div>
+
+<div class="index-main"
+<% current_user.tweets.each do |tweet| %>
+  <p><%= tweet.text %></p>
+  <p><%= tweet.place %></p>
+  <%= image_tag(tweet.image) %>
+<% end %>
   </div>

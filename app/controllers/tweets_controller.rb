@@ -11,10 +11,13 @@ class TweetsController < ApplicationController
     end
 
     def new
+      @tweet = Tweet.new
     end
 
     def create
-      Tweet.create(image: tweet_params[:image], place: tweet_params[:place], text: tweet_params[:text], user_id: current_user.id)
+      tweet = Tweet.new(image: tweet_params[:image], place: tweet_params[:place], text: tweet_params[:text], user_id: current_user.id)
+
+      tweet.save(image: tweet_params[:image], place: tweet_params[:place], text: tweet_params[:text], user_id: current_user.id)
       redirect_to action: 'index', flash: {success: 'Yes!! Success'}
     end
 
@@ -23,7 +26,8 @@ class TweetsController < ApplicationController
     end
 
     def timeline
-      @tweets = Tweet.order("created_at DESC")
+      # @tweets = Tweet.order("created_at DESC")
+      @tweets = Tweet.all
     end
 
     def destroy
@@ -46,6 +50,7 @@ class TweetsController < ApplicationController
       end
     end
 
+
     def search_rakuten_api(keyword)
       items = RakutenWebService::Ichiba::Item.search(keyword: keyword)
       images_arr = []
@@ -59,7 +64,7 @@ class TweetsController < ApplicationController
 
     private
     def tweet_params
-      params.permit(:image, :place, :text)
+      params.require(:tweet).permit(:image, :place, :text)
     end
 
 end

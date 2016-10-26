@@ -1,12 +1,15 @@
 <div class="content">
-  <%= form_for('/tweets', method: :post) do %>
+  <%= form_for(@tweet) do |f| %>
     <h3>記録する</h3>
     <h5>写真を記録する</h5>
-    <input placeholder="写真を載せる" type="file" name="image" id="upload_form"><br>
+    <br>
+    <div class="field">
+    <%= f.file_field :image %>
+  </div>
 
     <h5>場所を選択する</h5>
-    <input placeholder="お店を記録する" type="text" name="place"><br>
-    <textarea cols="30" name="text" placeholder="日本酒の感想を投稿しよう" rows="10"></textarea><br>
+    <%= f.text_field :place, :placeholder => "場所を登録しよう" %><br>
+    <%= f.text_area :text, :placeholder => "日本酒の感想を投稿しよう" %><br>
     <input type="submit" value="SENT">
   <% end %>
 </div>
