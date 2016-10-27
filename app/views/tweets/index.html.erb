@@ -15,10 +15,3 @@
     </div>
   </div>
 
-<div class="index-main"
-<% current_user.tweets.each do |tweet| %>
-  <p><%= tweet.text %></p>
-  <p><%= tweet.place %></p>
-  <%= image_tag(tweet.image) %>
-<% end %>
-</div>
