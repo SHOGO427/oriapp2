@@ -15,3 +15,37 @@
     </div>
   </div>
 
+<% if user_signed_in? %>
+
+<div class="index-main"
+<% current_user.tweets.each do |tweet| %>
+  <p><%= tweet.text %></p>
+  <p><%= tweet.place %></p>
+  <%= image_tag(tweet.image) %>
+
+  <% if user_signed_in? && current_user.id == tweet.user_id %>
+       <div class="more">
+            <li>
+              <%= link_to '編集', "/tweets/#{tweet.id}/edit", method: :get %>
+            </li>
+            <li>
+              <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
+            </li>
+       </div>
+       <% end %>
+
+<% end %>
+</div>
+
+<% else %>
+<br>
+ <div class="main-head">
+    <div class="content">
+      <h3>あの時飲んだ日本酒を</h3><br>
+      <h3>もう一度飲みたくなりませんか？</h3><br>
+      <h3>でも、名前も場所も分からない</h3><br>
+      <h3>そんな時のreSakeです！</h3><br>
+    </div>
+  </div>
+<br>
+<% end %>
