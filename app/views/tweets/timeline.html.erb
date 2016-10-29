@@ -16,8 +16,10 @@
             </li>
        </div>
        <% end %>
+        <p><%= tweet.place %></p>
         <%= simple_format(tweet.text) %>
         <%= image_tag(tweet.image) %>
       </div>
+      <hr class="line">
     <% end %>
   </div>

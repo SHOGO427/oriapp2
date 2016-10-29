@@ -19,8 +19,8 @@
 
 <div class="index-main"
 <% current_user.tweets.each do |tweet| %>
+  <br><p><%= tweet.place %></p>
   <p><%= tweet.text %></p>
-  <p><%= tweet.place %></p>
   <%= image_tag(tweet.image) %>
 
   <% if user_signed_in? && current_user.id == tweet.user_id %>
@@ -33,7 +33,7 @@
             </li>
        </div>
        <% end %>
-
+<hr class="line">
 <% end %>
 </div>
 
